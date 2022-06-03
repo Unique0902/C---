@@ -22,7 +22,9 @@ void removeConsoleCursor() {
 void ClearLindeFromReadBuffer(void) {
 	while (getchar() != '\n');
 }
-
+void clearScreen() {
+	system("cls");
+}
 void decorateConsole() {
 	system("mode con cols=100 lines=30 | title 숫자 맞추기 게임");
 }
@@ -62,6 +64,8 @@ int main(void) {
 		scanf("%d", &input);
 		if (num == input) {
 			printf("정답!!! \n 프로그램이 종료됩니다.");
+			Sleep(1000);
+			clearScreen();
 			break;
 		}
 		else if (input < num) {
